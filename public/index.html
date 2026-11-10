@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/main.js" type="module" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Photo Gallery</title>
+</head>
+
+<body>
+    <main>
+        <h1>Upload Your Favourite Pics And Create Your Own Gallery!</h1>
+
+        <section class="gallery" id="gallery">
+        </section>
+
+        <section class="uploads">
+            <p>Hier kannst Du deine Bilder für die Gallerie hochladen (max. 2 MB):</p>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="pic">
+                <button type="submit">Add to Gallery</button>
+            </form>
+        </section>
+
+    </main>
+</body>
+
+</html>
