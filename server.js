@@ -63,6 +63,7 @@ app.post("/upload", upload.single("pic"), (req, res) => {
         groesse: req.file.size,
         typ: req.file.mimetype
     })
+    /* res.redirect("/") */ //ToDo: Ausprobieren was stimmt--> dann wird die Seite neu geladen, aber die Bilder werden nicht angezeigt, weil die Seite nicht weiß, dass ein neues Bild hochgeladen wurde. Deshalb wird die Seite nicht neu geladen, sondern nur die Daten werden zurückgegeben.
 })
 
 app.get("/uploads", (req, res) => {
