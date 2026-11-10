@@ -34,7 +34,7 @@ const storage = multer.diskStorage({
     storage: storage,
     limits: { fileSize: 5 * 1024 * 1024 } 
 }); */
-
+const ACCEPTED_FILE_TYPES = ["image/jpeg", "image/png"];
 const upload = multer({
     storage: storage,
     limits: {
@@ -43,7 +43,7 @@ const upload = multer({
     fileFilter: function (req, file, cb) {
         console.log(file.mimetype);
 
-        if (file.mimetype !== "image/jpeg" && file.mimetype !== "image/png") {
+        if (!ACCEPTED_FILE_TYPES.includes(file.mimetype)) {
             cb(new Error("Nur JPEG und PNG Dateien sind erlaubt!"), false);
         } else {
             cb(null, true);
